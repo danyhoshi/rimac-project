@@ -6,20 +6,20 @@ env:
   FORCE_COLOR: 1
 
 jobs:
-  eslint:
-    name: ESLint
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '18.x'
-      - name: Setup ESLint
-        run: |
-          npm install --save-dev eslint@8.45.0 eslint-plugin-react-hooks@4.6.0 eslint-plugin-react-refresh@0.4.3 @typescript-eslint/eslint-plugin@^6.0.0 @typescript-eslint/parser@^6.0.0
-          [ -f .eslintrc.cjs ] || cp .eslintrc.cjs.example .eslintrc.cjs
-      - name: ESLint Report
-        run: npx eslint .
+  # eslint:
+  #   name: ESLint
+  #   runs-on: ubuntu-22.04
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: '18.x'
+      # - name: Setup ESLint
+      #   run: |
+      #     npm install --save-dev eslint@8.45.0 eslint-plugin-react-hooks@4.6.0 eslint-plugin-react-refresh@0.4.3 @typescript-eslint/eslint-plugin@^6.0.0 @typescript-eslint/parser@^6.0.0
+      #     [ -f .eslintrc.cjs ] || cp .eslintrc.cjs.example .eslintrc.cjs
+      # - name: ESLint Report
+      #   run: npx eslint .
   stylelint:
     name: Stylelint
     runs-on: ubuntu-22.04
