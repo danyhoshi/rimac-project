@@ -29,3 +29,7 @@ body {
     )
     rgb(var(--background-start-rgb)); */
 }
+
+.call {
+  color: #6464fa;
+}
