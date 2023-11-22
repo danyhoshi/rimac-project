@@ -38,7 +38,7 @@ export default function Login() {
                     <div className='w-[296px] flex flex-row justify-start items-center rounded-sm border border-[#C5CBE0]'>
                       
                       <select name="dni" id="dni" className='w-[28%] h-[56px] text-[#494F66] text-[16px] pl-[10px]  border-[#C5CBE0] border-r-[1px]'>
-                        <option className='text-[#494F66]' value="">DNI</option>
+                        <option className='text-[#494F66] bg-white' value="">DNI</option>
                       </select>
                       
                       <input
