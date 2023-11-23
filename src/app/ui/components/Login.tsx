@@ -84,7 +84,7 @@ export default function Login() {
                       /> 
                     </div>
                 
-                <div className="flex items-center mt-4">
+                <div className="flex mt-4">
                     <input id="green-checkbox" type="checkbox" value="" className="w-4 h-4 accent-[#389E0D] text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
                     <label className="ms-2 text-[12px] text-[#676F8F]">Acepto la Política de <span className='font-bold text-[#676F8F] underline'>Protección de Datos Personales</span> y los <span className='font-bold text-[#676F8F] underline'>Términos y Condiciones</span>.</label>
                 </div>
