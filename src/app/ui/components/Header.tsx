@@ -4,7 +4,7 @@ import { roboto } from '@/app/ui/fonts';
 
 export default function Header() {
   return (
-      <div className=' flex justify-center w-full'>
+      <div className='flex justify-center relative w-full z-10'>
         <header className='fixed md:fixed lg:fixed w-full md:max-w-[90%] lg:max-w-[80%] top-0 flex flex-row justify-between h-14 px-6 items-center bg-[#fafbff] lg:bg-transparent md:bg-transparent'>
           <Image  
             src="/LogoRIMAC.svg"
