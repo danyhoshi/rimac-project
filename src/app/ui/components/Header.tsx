@@ -1,11 +1,26 @@
 'use client';
 import Image from 'next/image'
 import { roboto } from '@/app/ui/fonts';
-
+import { useSearchParams, usePathname, useRouter } from 'next/navigation';
+import clsx from 'clsx';
 export default function Header() {
+  const pathname = usePathname();
+  console.log(pathname)
   return (
-      <div className='flex justify-center relative w-full z-10 bg-[rgb(250,251,255)] lg:bg-transparent'>
-        <header className='fixed md:fixed lg:fixed w-full lg:max-w-[80%] top-0 flex flex-row justify-between h-14 px-6 items-center bg-[#fafbff] lg:bg-transparent'> 
+
+      // <div className={clsx('flex justify-center relative w-full z-10 lg:bg-transparent',
+      //   {'bg-white': pathname==='/arma-tu-plan',
+
+      //   },
+      // )}>
+       <div className='flex justify-center relative w-full z-10 bg-[rgb(250,251,255)] lg:bg-transparent'>  
+        {/* <header className='fixed md:fixed lg:fixed w-full lg:max-w-[80%] top-0 flex flex-row justify-between h-14 px-6 items-center bg-[#fafbff]'>  */}
+        <header className={clsx('fixed md:fixed lg:fixed w-full lg:max-w-[80%] top-0 flex flex-row justify-between h-14 px-6 items-center bg-[#fafbff] lg:bg-transparent', 
+        {
+          'bg-white': pathname==='/arma-tu-plan',
+          'lg:bg-white': pathname==='/arma-tu-plan',
+        }
+        )}>
           <Image  
             src="/LogoRIMAC.svg"
             width={92}
