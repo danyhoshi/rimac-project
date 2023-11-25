@@ -34,9 +34,13 @@ select {
 }
 
 .plan {
-  box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.15);
-  -webkit-box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.15);
-  -moz-box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.15);
+  /* box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.15); */
+  /* Shadow 3 */
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(163, 171, 204, 0.12);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(163, 171, 204, 0.12);
+  box-shadow: 0px 0px 10px 0px rgba(163, 171, 204, 0.12);
+  /* -webkit-box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.15); */
 }
 .desktop {
   background: url(../../public/desktop2.svg);
@@ -48,14 +52,14 @@ select {
 
 
 .flex1 {
-  flex: 1;
   display: inline-flex;
+  flex: 1;
   justify-content: center;
 }
 
 .flex3 {
-  flex: 3;
   display: inline-flex;
+  flex: 3;
   justify-content: center;
 }
 
