@@ -4,6 +4,7 @@ import { roboto } from '@/app/ui/fonts'
 import {Lato} from 'next/font/google'
 import React from 'react'
 import clsx from 'clsx';
+import Switch from './Switch';
 const latoBold = Lato({  weight: ['700'],
                         subsets: ['latin'] });
 const latoRegular = Lato({  weight: ['400'],
@@ -34,12 +35,13 @@ const Accordion: React.FC<Props> = ({title, description, src}) =>
                 <div className='flex flex-col'>
                     <div className='flex justify-between pl-4 w-[244px]'>
                         <h3 className='text-[#494F66]'>{title}</h3>
-                        <Image   
+                        {/* <Image   
                             src={'/On.png'}
                             width={40}
                             height={40}
                             className="block self-end"
-                            alt="switch"/>
+                            alt="switch"/> */}
+                        <Switch />
                     </div>
                     <p className={clsx(`pl-4 pt-3 ${roboto.className} text-[14px] text-[#676F8F] w-[244px]`,
                         {
