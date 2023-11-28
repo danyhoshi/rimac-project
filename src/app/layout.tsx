@@ -25,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='relative'>  
-      <body className={`${inter.className}`}>
+      <body className={`${inter.className} relative`}>
           <Header /> 
           {children}
       </body>
