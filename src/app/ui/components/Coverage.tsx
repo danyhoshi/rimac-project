@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import { lato } from '@/app/ui/fonts'
 import { roboto } from '@/app/ui/fonts';
+import Link from 'next/link';
 
 export default function Step() {
   
@@ -9,14 +10,14 @@ export default function Step() {
         <section className='flex flex-col justify-center items-center w-full h-[340px] bg-[#FAFBFF] lg:bg-white gap-4'>
             <div className='w-[296px] lg:w-[384px]'>
             <div className='lg:flex hidden items-center pl-4 mt-3'>
-                <Image 
+            <Link href={'/'}><Image 
                     src={'/icon_Back.svg'}
                         width={24}
                         height={24}
                         className="block"
                         // onClick={ handleClickAdd }
-                        alt={'icon-back' } />
-                <p className={`text-[10px] text-[#A9AFD9] tracking-[0.8px] pl-4 ${lato.className}`}>VOLVER</p>
+                        alt={'icon-back' } /></Link>
+                <Link href={'/'}><p className={`text-[10px] text-[#A9AFD9] tracking-[0.8px] pl-4 ${lato.className}`}>VOLVER</p></Link>
             </div>
                 <h2 className={`${lato.className} text-[28px] text-[#494F66] lg:hidden`}>Mira las coberturas</h2>
                 <h2 className={`${lato.className} text-[40px] text-[#494F66] hidden lg:block mt-3`}>¡Hola, <span className='text-[#FF1C44]'>Juan!</span></h2>

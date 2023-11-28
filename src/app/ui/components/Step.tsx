@@ -22,7 +22,7 @@ export default function Step() {
                 alt="bar"/>
       </div>
       <div className='lg:flex flex-col gap-16 pl-8 bg-[#FAFBFF] w-[30%] hidden relative'>
-        <div className='flex'>
+        <div className='flex lg:ml-[20%]'>
           <Image
                 src="/1datos.svg"
                 width={24}
@@ -35,9 +35,9 @@ export default function Step() {
                 width={2}
                 height={40}
                 alt="return"
-                className='pt-0 absolute top-10 left-11'
+                className='pt-0 absolute top-10 left-[7.3rem]'
         />
-        <div className='flex'>
+        <div className='flex lg:ml-[20%]'>
             <Image 
                 src="/2ArmaTuPlan.svg"
                 width={24}
