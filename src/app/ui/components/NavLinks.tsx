@@ -47,7 +47,7 @@ export default function NavLink() {
             <ul className={`flex justify-evenly w-full mt-10 text-[10px] ${latoBold.className}`}>
                 {links.map((pag, index) => {
                     return (
-                        <li onClick= {() => handleClick(index) } 
+                        <Link key={ pag.href } href={pag.href} onClick= {() => handleClick(index) } 
                         className={clsx('text-[#494F66] w-[33.33%] text-center leading-5 tracking-[0.8px] h-[63px]',
                         {
                             'px-8': index===0,
@@ -58,7 +58,7 @@ export default function NavLink() {
 
                         }
                         )
-                        } key={ index }><Link href={pag.href}>{pag.name}</Link></li>
+                        }><li>{pag.name}</li></Link>
                     )
                 })
                 }

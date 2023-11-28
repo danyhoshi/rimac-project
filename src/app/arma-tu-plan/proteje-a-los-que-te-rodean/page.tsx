@@ -12,6 +12,7 @@ export default function pageProtejeLosTuyos() {
                 title={opcion.title}
                 description={opcion.description}
                 src={opcion.src}
+                key={ opcion.src }
               />
             )
         }
