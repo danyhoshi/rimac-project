@@ -6,12 +6,23 @@ import { roboto } from '@/app/ui/fonts';
 export default function Step() {
   
     return ( 
-        <section className='flex flex-col justify-center items-center w-full h-[340px] bg-[#FAFBFF] gap-4'>
-            <div className='w-[296px]'>
-                <h2 className={`${lato.className} text-[28px] text-[#494F66]`}>Mira las coberturas</h2>
+        <section className='flex flex-col justify-center items-center w-full h-[340px] bg-[#FAFBFF] lg:bg-white gap-4'>
+            <div className='w-[296px] lg:w-[384px]'>
+            <div className='lg:flex hidden items-center pl-4 mt-3'>
+                <Image 
+                    src={'/icon_Back.svg'}
+                        width={24}
+                        height={24}
+                        className="block"
+                        // onClick={ handleClickAdd }
+                        alt={'icon-back' } />
+                <p className={`text-[10px] text-[#A9AFD9] tracking-[0.8px] pl-4 ${lato.className}`}>VOLVER</p>
+            </div>
+                <h2 className={`${lato.className} text-[28px] text-[#494F66] lg:hidden`}>Mira las coberturas</h2>
+                <h2 className={`${lato.className} text-[40px] text-[#494F66] hidden lg:block mt-3`}>¡Hola, <span className='text-[#FF1C44]'>Juan!</span></h2>
                 <p className={`${roboto.className} text-[16px] text-[#676F8F]`}>Conoce las coberturas para tu plan</p>
             </div>
-            <div className='pl-6 flex justify-start items-center w-[296px] h-[156px] rounded-lg relative plan lg:shadow-none lg:border-[#EDEFFC] lg:border-[3px]  bg-white'>
+            <div className='pl-6 flex justify-start items-center w-[296px] h-[156px] rounded-lg relative plan lg:shadow-none lg:border-[#EDEFFC] lg:border-[3px]  bg-white lg:w-[384px]'>
                 <Image
                     src="/boy-mobile.svg"
                     width={86}

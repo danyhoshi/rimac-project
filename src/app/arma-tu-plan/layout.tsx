@@ -9,12 +9,14 @@ export default function RootLayout({
     children: React.ReactNode
   }) {
     return (
-      <div className='relative mt-[56px]'>  
+      <div className='flex flex-col lg:flex-row relative mt-[56px]'>  
             <Step />
-            <Coverage />
-            <Sum />
-            <NavLink />
-            {children}
+            <div className="lg:w-[33.33%]">
+              <Coverage />
+              <Sum />
+              <NavLink />
+              {children}
+            </div>
             <IWant />
         </div>
       
