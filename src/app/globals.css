@@ -85,3 +85,9 @@ select {
   margin-left: 1rem;
   padding-left: 0.8rem;
 }
+
+@media screen and (max-height: 724px) {
+  .hidden-footer {
+    display: none;
+  }
+}

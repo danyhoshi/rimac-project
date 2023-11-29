@@ -1,15 +1,9 @@
 'use client'; //This is a Client Component, which means you can use event listeners and hooks.
-import Image from 'next/image'
 import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 import Link from 'next/link';
 import React from 'react'
-import {Lato} from 'next/font/google'
-const latoBold = Lato({  weight: ['700'],
-                        subsets: ['latin'] });
-const latoRegular = Lato({  weight: ['400'],
-                        subsets: ['latin'] });   
-
+import { lato } from '@/app/ui/fonts'      
 
 const links = [
     {
@@ -42,9 +36,9 @@ export default function NavLink() {
         })
     }
     return ( 
-      <section className={`flex flex-col items-center justify-center ${latoRegular.className} mt-10 text-[#494F66] lg:w-[382px]`}>
+      <section className={`flex flex-col items-center justify-center ${lato.className} font-normal mt-10 text-[#494F66] lg:w-[382px]`}>
             <h2 className='text-[20px] w-[296px]'>Agrega o quita coberturas</h2>
-            <ul className={`flex justify-evenly w-full mt-10 text-[10px] ${latoBold.className}`}>
+            <ul className={`flex justify-evenly w-full mt-10 text-[10px] ${lato.className} font-bold`}>
                 {links.map((pag, index) => {
                     return (
                         <Link key={ pag.href } href={pag.href} onClick= {() => handleClick(index) } 
