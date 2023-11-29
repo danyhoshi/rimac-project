@@ -1,18 +1,18 @@
 'use client'; //This is a Client Component, which means you can use event listeners and hooks.
 import Image from 'next/image'
 import { lato } from '@/app/ui/fonts'
-
+import Link from 'next/link'
 export default function Step() {
   
     return ( 
       <>
       <div className='flex justify-center gap-2 lg:hidden items-center h-[48px] border-t-[1px] border-[#d7dbf5]'>
-            <Image
+      <Link href={'/'}><Image
                 src="/leftArrow.svg"
                 width={24}
                 height={24}
                 className="block lg:hidden"
-                alt="return"/>
+                alt="return"/></Link>
                 <p className={`${lato.className} text-[10px] text-bold text-[#676F8F]`}>PASO 2 DE 2</p>
             <Image 
                 src="/Bar.svg"
