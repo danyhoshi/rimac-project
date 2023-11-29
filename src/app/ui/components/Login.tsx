@@ -3,12 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import { roboto } from '@/app/ui/fonts';
-//import { lato } from '@/app/ui/fonts'
-import {Lato} from 'next/font/google'
-const latoBold = Lato({  weight: ['700'],
-                        subsets: ['latin'] });
-const latoRegular = Lato({  weight: ['400'],
-                        subsets: ['latin'] });                        
+import { lato } from '@/app/ui/fonts'                       
                        
  export const metadata: Metadata = {
                      title: 'Login',
@@ -22,9 +17,9 @@ export default function Login() {
             height={276}
             className="block lg:hidden absolute right-0 top-[58px] "
             alt="mobile-girl" />
-          <div className={`flex lg:hidden justify-center flex-col w-full mt-10 ${latoRegular.className} h-[270px] bg-[#fafbff]`}>
+          <div className={`flex lg:hidden justify-center flex-col w-full mt-10 ${lato.className} font-normal h-[270px] bg-[#fafbff]`}>
             <div className='w-4/6 ml-7 max-w-[210px]'>
-              <p className='text-[#494F66] text-[10px]'><span className={`${latoBold.className}`}>¡NUEVO!</span></p>
+              <p className='text-[#494F66] text-[10px]'><span className={`${lato.className} font-bold`}>¡NUEVO!</span></p>
               <h1 className={`text-[#494F66] text-[28px] leading-9 mt-2`}>Seguro Vehicular <span className='text-[#ff1c44]'>Tracking</span></h1>
               <p className={`${roboto.className} text-[#676F8F] text-[14px] mt-4`}>Cuéntanos dónde le harás seguimiento a tu seguro</p>
             </div>
@@ -32,13 +27,13 @@ export default function Login() {
         </div>
         <div className='hidden relative lg:block desktop w-[45%] h-full w-max-[816px]'>
             <div className='w-[430px] absolute lg:bottom-[20%]  pl-[140px]'> {/*mt-[21rem]*/}
-              <p className='text-[#494F66] text-[12px]'><span className={`${latoBold.className}`}>¡NUEVO!</span></p>
+              <p className='text-[#494F66] text-[12px]'><span className={`${lato.className} font-bold`}>¡NUEVO!</span></p>
               <h1 className={`text-[#494F66] text-[34px] leading-11 mt-2`}>Seguro <span className='text-[#ff1c44]'>Vehicular Tracking</span></h1>
               <p className={`${roboto.className} text-[#676F8F] text-[14px] mt-4`}>Cuéntanos dónde le harás seguimiento a tu seguro</p>
             </div>
             <p className='absolute text-[12px] text-[#A9AFD9] inset-x-0 pl-[120px] bottom-[50px]'>© 2021 RIMAC Seguros y Reaseguros.</p>
         </div>
-       <div className={`${latoRegular.className} flex justify-center text-[#494F66] text-[24px] mt-9 lg:w-[60%] pb-6`}>
+       <div className={`${lato.className} font-normal flex justify-center text-[#494F66] text-[24px] mt-9 lg:w-[60%] pb-6`}>
             
             <form className="space-y-3 w-[296px]">
             <h2 className='self-start'>Déjanos tus datos</h2>

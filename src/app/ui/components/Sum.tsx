@@ -1,5 +1,4 @@
 'use client'; //This is a Client Component, which means you can use event listeners and hooks.
-import Image from 'next/image'
 import { lato } from '@/app/ui/fonts'
 
 export default function Sum() {
