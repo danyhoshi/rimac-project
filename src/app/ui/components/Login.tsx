@@ -1,14 +1,43 @@
 'use client';
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import { roboto } from '@/app/ui/fonts';
-import { lato } from '@/app/ui/fonts'                       
+import { lato } from '@/app/ui/fonts'      
+import { useForm, SubmitHandler } from 'react-hook-form'          
+import { formInfoSchema } from '@/app/validation/login'       
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useRouter } from 'next/navigation'
                        
  export const metadata: Metadata = {
                      title: 'Login',
                         };
+type Inputs = {
+  dni: string,
+  placa: string,
+  celular: string,
+  acepto: boolean
+}
+
+
 export default function Login() {
+  const router = useRouter()
+  const { register, 
+    handleSubmit, 
+    formState: { errors, isSubmitting },
+    watch } = useForm<Inputs>({
+    defaultValues: {
+    dni: "",
+    placa: "",
+    celular: "",
+    acepto: false
+  },
+  resolver: zodResolver(formInfoSchema),
+})
+
+
+const onSubmit: SubmitHandler<Inputs> = (data) => {console.log(data) 
+  router.push('/arma-tu-plan')}//place where we send data to db}
+
   return (
     <div className='bg-[#fff] flex justify-center items-center flex-col lg:flex-row w-full h-full'>
           <Image
@@ -35,7 +64,7 @@ export default function Login() {
         </div>
        <div className={`${lato.className} font-normal flex justify-center text-[#494F66] text-[24px] mt-9 lg:w-[60%] pb-6`}>
             
-            <form className="space-y-3 w-[296px]">
+            <form className="space-y-3 w-[296px]" onSubmit = { handleSubmit(onSubmit) }>
             <h2 className='self-start'>Déjanos tus datos</h2>
               <div className="flex-1 w-full">    
                   <div className="relative">
@@ -47,24 +76,26 @@ export default function Login() {
                       
                       <input
                         className="peer block w-[75%] h-[56px] pl-3 text-[16px] outline-2 placeholder:text-[#A9AFD9]}"
-                        id="id"
+                        id="dni"
                         type="text"
-                        name="id"
                         placeholder="Nro. de Doc"
                         required
+                        { ...register('dni') }
                       />
                     </div>
+                      { errors.dni?.message && <div className={`text-[#FF1C44] text-[12px] ${lato.className}`}>{ errors.dni?.message }</div> }
                   </div>
                     <div className="relative mt-4">
                       <input
                         className="peer block w-[296px] rounded-sm border h-[56px] border-[#C5CBE0] pl-3 text-[16px] outline-2 text-[#A9AFD9]"
                         id="celular"       
                         type="text"
-                        name="celular"
                         placeholder="Celular"
                         required
                         minLength={6}
+                        { ...register('celular') }
                       />
+                       { errors.celular?.message && <div className={`text-[#FF1C44] text-[12px] ${lato.className}`}>{ errors.celular?.message }</div> }
                   </div>
               
                   <div className="relative mt-4">
@@ -72,22 +103,33 @@ export default function Login() {
                         className="peer block w-[296px] h-[56px] rounded-sm border border-[#C5CBE0] pl-3 text-[16px] outline-2 text-[#A9AFD9]"
                         id="placa"
                         type="text"
-                        name="placa"
                         placeholder="Placa"
                         required
                         minLength={6}
+                        { ...register('placa') } 
                       /> 
+                      {/* Registramos todos los inputs, se pasa el nombre que se le dio en el type Inputs */}
+                      { errors.placa?.message && <div className={`text-[#FF1C44] text-[12px] ${lato.className}`}>{ errors.placa?.message }</div> }
                     </div>
                 
                 <div className="flex mt-4">
-                    <input id="green-checkbox" type="checkbox" value="" className="w-4 h-4 accent-[#389E0D] text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+                    <input id="acepto" 
+                      type="checkbox" 
+                      value="" 
+                      className="w-4 h-4 accent-[#389E0D] text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                      { ...register('acepto') }/>
                     <label className="ms-2 text-[12px] text-[#676F8F]">Acepto la Política de <span className='font-bold text-[#676F8F] underline'>Protección de Datos Personales</span> y los <span className='font-bold text-[#676F8F] underline'>Términos y Condiciones</span>.</label>
                 </div>
+                    { errors.acepto?.message && <div className={`text-[#FF1C44] text-[12px] ${lato.className}`}>{ errors.acepto?.message }</div> }
             <button className="bg-[#FF1C44] h-[56px] text-white py-2 px-4 text-[14px] w-full lg:w-[192px] mt-8 font-bold rounded-md">
               COTÍZALO
             </button>
              
-              </div> 
+              </div>
+              {/* Solo para desarrolo, para ver el estado actual del formulario, usando el metodo whatch del hook useForm*/} 
+    {/* <pre>
+                { JSON.stringify(watch(), null, 2) }
+              </pre> */}
     </form>
         </div>  
     </div>
