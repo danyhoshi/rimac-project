@@ -3,8 +3,8 @@ import Image from 'next/image'
 import { lato } from '@/app/ui/fonts'
 import { roboto } from '@/app/ui/fonts';
 import Link from 'next/link';
-import { useAppDispatch, useAppSelector } from '@/app/Redux/hooks'
-import { RootState } from '@/app/Redux/store';
+import { useAppDispatch, useAppSelector } from "../../../Redux/hooks"
+import { RootState } from "../../../Redux/store";
 export default function Step() {
     const cobertura = useAppSelector((state: RootState) => state.cobertura);
     return ( 

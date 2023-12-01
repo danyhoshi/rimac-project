@@ -7,9 +7,9 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { formInfoSchema } from '@/app/validation/login'       
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation'
-import { coberturaSlice, changePlaca } from '@/app/Redux/features/coberturaSlice';
-import { useAppDispatch, useAppSelector } from '@/app/Redux/hooks'
-import { RootState } from '@/app/Redux/store';
+import { coberturaSlice, changePlaca } from "../../../Redux/features/coberturaSlice"
+import { useAppDispatch, useAppSelector } from "../../../Redux/hooks"
+import { RootState } from "../../../Redux/store";
                        
  export const metadata: Metadata = {
                      title: 'Login',
