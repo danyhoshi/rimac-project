@@ -5,6 +5,8 @@ import { lato } from '@/app/ui/fonts'
 import React from 'react'
 import clsx from 'clsx';
 import Switch from './Switch';
+import { useAppDispatch, useAppSelector } from "../../../Redux/hooks"
+import { RootState } from "../../../Redux/store";
 
 interface Props {
     title: string,
@@ -13,6 +15,7 @@ interface Props {
 }
 const Accordion: React.FC<Props> = ({title, description, src}) =>
 {
+    const cobertura = useAppSelector((state: RootState) => state.cobertura);
     const [show, setShow] = React.useState(false)
     const [add, setAdd] = React.useState(true)
     const handleClick = () => {
@@ -21,7 +24,13 @@ const Accordion: React.FC<Props> = ({title, description, src}) =>
     }
 
     const handleClickAdd = () => {
-        setAdd(prevState => !prevState)
+        if(title === 'Choque y/o pasarte la luz roja' && cobertura.sinChoqueRoja){
+            console.log('Este es title: ', title)
+            setAdd(true)
+        }
+        else
+            setAdd(prevState => !prevState)
+
         console.log('click Add')
     }
     return ( 

@@ -33,7 +33,7 @@ export default function Step() {
                     alt="boy"/>
                     <div className='w-[160px] h-[48px]'>
                         
-                       <p className={`text-[#A9AFD9] text-[12px] ${roboto.className}`}>{ cobertura.placa }</p>
+                       <p className={`text-[#A9AFD9] text-[12px] ${roboto.className}`}>Placa: { cobertura.placa }</p>
                        <p className={`${lato.className} text-[#494F66] text-[16px]`}>Wolkswagen 2019 Golf</p>
                     </div>
             </div>
