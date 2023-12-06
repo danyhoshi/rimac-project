@@ -14,7 +14,6 @@ import { planesCobertura } from "@/app/lib/data"
     llantaRobada: boolean,
     choqueRoja: boolean,
     atropello: boolean,
-    sinChoqueRoja: boolean
 } 
 
 const initialState: cobertura = {
@@ -26,11 +25,10 @@ const initialState: cobertura = {
     montoChoqueRoja: planesCobertura.choqueRoja,
     montoAtropello: planesCobertura.atropello,
     montoCobertura: 14300.00,
-    montoMensual: 20.00,
+    montoMensual:planesCobertura.montoBase,
     llantaRobada: false,
     choqueRoja: false,
     atropello: false,
-    sinChoqueRoja: false
 }
 
 export const coberturaSlice = createSlice({
@@ -41,26 +39,51 @@ export const coberturaSlice = createSlice({
             state.montoCobertura = action.payload
             if(state.montoCobertura > 16000) {
                 if(state.choqueRoja){
-                    state.choqueRoja = false 
-                    state.montoMensual = state.montoMensual - state.montoChoqueRoja
-                }
-                state.sinChoqueRoja = true
+                    const atropello = state.atropello ? state.montoAtropello : 0.00
+                    const llantaRobo = state.llantaRobada ? state.montoLlantaRobada : 0.00
+                    state.montoMensual =  atropello + llantaRobo + state.montoBase
+                } 
             }
+            else {
+                const choque = state.choqueRoja ? state.montoChoqueRoja : 0.00
+                const atropello = state.atropello ? state.montoAtropello : 0.00
+                const llantaRobo = state.llantaRobada ? state.montoLlantaRobada : 0.00
+                state.montoMensual =  choque + atropello + llantaRobo + state.montoBase
+            }            
         },
         changeNameUser: (state, action) => {
             state.montoCobertura = action.payload
         },
         changePlaca: (state, action) => {
-            console.log(`En el reducer: ${action.payload}`)
-            state.placa = action.payload.toUpperCase() 
-            console.log(`En el reducer state: ${state.placa}`)
+            state.placa = action.payload.toUpperCase()  
         },
-        // changeSinChoqueRoja: (state, action) => {
-        //     state.sinChoqueRoja = action.payload
-        // },
+        changeChoqueRoja: (state, action) => {
+
+            state.choqueRoja = action.payload
+            if(action.payload)
+                state.montoMensual  += state.montoChoqueRoja 
+            else
+                state.montoMensual  -= state.montoChoqueRoja 
+        },
+        changeAtropello: (state, action) => {
+            state.atropello = action.payload
+            if(action.payload)
+                state.montoMensual  += state.montoAtropello 
+            else
+                state.montoMensual  -= state.montoAtropello 
+        },
+        changeLlantaRobada: (state, action) => {
+            state.llantaRobada = action.payload
+            if(action.payload)
+                state.montoMensual  += state.montoLlantaRobada 
+            else
+                state.montoMensual  -= state.montoLlantaRobada 
+        },
+       
+
     }
 })
 
-export const { changeMontoCobertura, changeNameUser, changePlaca } = coberturaSlice.actions; 
+export const { changeMontoCobertura, changeNameUser, changePlaca, changeAtropello, changeLlantaRobada, changeChoqueRoja } = coberturaSlice.actions; 
 
 export default coberturaSlice.reducer; 

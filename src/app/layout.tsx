@@ -5,7 +5,6 @@ import './globals.css'
 import Image from 'next/image'
 import { roboto } from '@/app/ui/fonts';
 import Header from '@/app/ui/components/Header'
-import Providers from './Redux/Provider';
 import StoreProvider from './StoreProvider';
 const inter = Inter({ subsets: ['latin'] })
 

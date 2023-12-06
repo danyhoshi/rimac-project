@@ -8,10 +8,12 @@ export default function Sum() {
     const dispatch = useAppDispatch();
     const cobertura = useAppSelector((state: RootState) => state.cobertura);
     const handlerPlus = () => {
-        dispatch(changeMontoCobertura(cobertura.montoCobertura + 100))
+        if(cobertura.montoCobertura < 16500 )
+            dispatch(changeMontoCobertura(cobertura.montoCobertura + 100))  
     }
     const handlerMinus = () => {
-        dispatch(changeMontoCobertura(cobertura.montoCobertura - 100))
+        if(cobertura.montoCobertura > 12500 )
+            dispatch(changeMontoCobertura(cobertura.montoCobertura - 100))
     }
     return ( 
       <section className={`flex flex-col lg:flex-row lg:gap-6 justify-center items-center w-full ${lato.className} mt-10`}>

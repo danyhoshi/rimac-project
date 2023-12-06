@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation';
 import clsx from 'clsx';
 export default function Header() {
   const pathname = usePathname();
-  console.log(pathname)
   return (
 
       // <div className={clsx('flex justify-center relative w-full z-10 lg:bg-transparent',

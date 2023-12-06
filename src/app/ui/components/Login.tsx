@@ -40,9 +40,8 @@ export default function Login() {
 })
 
 
-const onSubmit: SubmitHandler<Inputs> = (data) => {console.log(data) 
+const onSubmit: SubmitHandler<Inputs> = (data) => {
   dispatch(changePlaca(data.placa))
-  console.log(`Placa state: ${cobertura.placa}`);
   router.push('/arma-tu-plan')
 
 }//place where we send data to db}
