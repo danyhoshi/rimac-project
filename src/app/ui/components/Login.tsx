@@ -7,6 +7,9 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { formInfoSchema } from '@/app/validation/login'       
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation'
+import { coberturaSlice, changePlaca } from "../../../Redux/features/coberturaSlice"
+import { useAppDispatch, useAppSelector } from "../../../Redux/hooks"
+import { RootState } from "../../../Redux/store";
                        
  export const metadata: Metadata = {
                      title: 'Login',
@@ -21,6 +24,8 @@ type Inputs = {
 
 export default function Login() {
   const router = useRouter()
+  const cobertura = useAppSelector((state: RootState) => state.cobertura);
+  const dispatch = useAppDispatch();
   const { register, 
     handleSubmit, 
     formState: { errors, isSubmitting },
@@ -35,8 +40,11 @@ export default function Login() {
 })
 
 
-const onSubmit: SubmitHandler<Inputs> = (data) => {console.log(data) 
-  router.push('/arma-tu-plan')}//place where we send data to db}
+const onSubmit: SubmitHandler<Inputs> = (data) => {
+  dispatch(changePlaca(data.placa))
+  router.push('/arma-tu-plan')
+
+}//place where we send data to db}
 
   return (
     <div className='bg-[#fff] flex justify-center items-center flex-col lg:flex-row w-full h-full'>

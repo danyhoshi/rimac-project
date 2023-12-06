@@ -3,9 +3,10 @@ import Image from 'next/image'
 import { lato } from '@/app/ui/fonts'
 import { roboto } from '@/app/ui/fonts';
 import Link from 'next/link';
-
+import { useAppDispatch, useAppSelector } from "../../../Redux/hooks"
+import { RootState } from "../../../Redux/store";
 export default function Step() {
-  
+    const cobertura = useAppSelector((state: RootState) => state.cobertura);
     return ( 
         <section className='flex flex-col justify-center items-center w-full h-[340px] bg-[#FAFBFF] lg:bg-white gap-4'>
             <div className='w-[296px] lg:w-[384px]'>
@@ -31,7 +32,8 @@ export default function Step() {
                     className="absolute bottom-0 right-0" 
                     alt="boy"/>
                     <div className='w-[160px] h-[48px]'>
-                       <p className={`text-[#A9AFD9] text-[12px] ${roboto.className}`}>Placa: C2U-114</p>
+                        
+                       <p className={`text-[#A9AFD9] text-[12px] ${roboto.className}`}>Placa: { cobertura.placa }</p>
                        <p className={`${lato.className} text-[#494F66] text-[16px]`}>Wolkswagen 2019 Golf</p>
                     </div>
             </div>

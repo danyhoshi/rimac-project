@@ -53,3 +53,9 @@ export const dataMejora = [
     },
 ]
 
+export const planesCobertura = {
+    montoBase: 20.00,
+    llantaRobada: 15.00,
+    choqueRoja: 20.00,
+    atropello: 50.00
+}

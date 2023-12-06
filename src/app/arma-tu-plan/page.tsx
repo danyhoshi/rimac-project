@@ -1,6 +1,4 @@
-import Step from "../ui/components/Step";
 import Accordion from "../ui/components/Accordion";
-import Sum from "../ui/components/Sum";
 import { dataProtejeTuAuto } from "@/app/lib/data"
 import { option } from "@/app/lib/types"
 export default function pageArmaTuPlan() {
