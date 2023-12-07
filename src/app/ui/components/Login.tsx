@@ -7,7 +7,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { formInfoSchema } from '@/app/validation/login'       
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation'
-import { coberturaSlice, changePlaca } from "../../../Redux/features/coberturaSlice"
+import { coberturaSlice, changePlaca, getDataUser } from "../../../Redux/features/coberturaSlice"
 import { useAppDispatch, useAppSelector } from "../../../Redux/hooks"
 import { RootState } from "../../../Redux/store";
                        
@@ -24,7 +24,7 @@ type Inputs = {
 
 export default function Login() {
   const router = useRouter()
-  const cobertura = useAppSelector((state: RootState) => state.cobertura);
+  // const cobertura = useAppSelector((state: RootState) => state.cobertura);
   const dispatch = useAppDispatch();
   const { register, 
     handleSubmit, 
@@ -42,6 +42,8 @@ export default function Login() {
 
 const onSubmit: SubmitHandler<Inputs> = (data) => {
   dispatch(changePlaca(data.placa))
+  const id = Math.floor(Math.random() * 9) + 0
+  dispatch(getDataUser(id))
   router.push('/arma-tu-plan')
 
 }//place where we send data to db}

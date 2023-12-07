@@ -21,7 +21,7 @@ export default function Step() {
                 <Link href={'/'}><p className={`text-[10px] text-[#A9AFD9] tracking-[0.8px] pl-4 ${lato.className}`}>VOLVER</p></Link>
             </div>
                 <h2 className={`${lato.className} text-[28px] text-[#494F66] lg:hidden`}>Mira las coberturas</h2>
-                <h2 className={`${lato.className} text-[40px] text-[#494F66] hidden lg:block mt-3`}>¡Hola, <span className='text-[#FF1C44]'>Juan!</span></h2>
+                <h2 className={`${lato.className} text-[40px] text-[#494F66] hidden lg:block mt-3`}>¡Hola, <span className='text-[#FF1C44]'>{cobertura.nameUser.split(' ')[0]}!</span></h2>
                 <p className={`${roboto.className} text-[16px] text-[#676F8F]`}>Conoce las coberturas para tu plan</p>
             </div>
             <div className='pl-6 flex justify-start items-center w-[296px] h-[156px] rounded-lg relative plan lg:shadow-none lg:border-[#EDEFFC] lg:border-[3px]  bg-white lg:w-[384px]'>
@@ -34,7 +34,7 @@ export default function Step() {
                     <div className='w-[160px] h-[48px]'>
                         
                        <p className={`text-[#A9AFD9] text-[12px] ${roboto.className}`}>Placa: { cobertura.placa }</p>
-                       <p className={`${lato.className} text-[#494F66] text-[16px]`}>Wolkswagen 2019 Golf</p>
+                       <p className={`${lato.className} text-[#494F66] text-[16px]`}>{ cobertura.marcaAuto } { cobertura.anioAuto } <br /> { cobertura.modeloAuto }</p>
                     </div>
             </div>
         </section>

@@ -1,8 +1,12 @@
+'use client'
 import Image from 'next/image'
 import { lato } from '@/app/ui/fonts';
 import { roboto } from '@/app/ui/fonts'
+import { useAppDispatch, useAppSelector } from '../../Redux/hooks'
+import { RootState } from "../../Redux/store";
 
 export default function pageGracias() {
+    const cobertura = useAppSelector((state: RootState) => state.cobertura);
     return (
     <section className='flex flex-col items-center lg:flex-row md:items-start w-full h-screen box-border relative pt-[56px]'>
         <Image 
@@ -28,7 +32,8 @@ export default function pageGracias() {
             </div>
             <div className={`w-[320px] md:w-[480px] text-[#676F8F] text-[16px] pt-6 font-light ${roboto.className}`}>
                 <p>Enviaremos la confirmación de compra de tu Plan Vehícular Tracking a tu correo: <br />
-                <span className='text-[#494F66]'>joel.sanchez@gmail.com</span></p>
+                <span className='text-[#494F66]'>{cobertura.email}</span></p>
+                <p className='text-[#494F66]'>MONTO: $  { cobertura.montoMensual }</p>
                 <button className="bg-[#FF1C44] h-[56px] text-white py-2 px-4 mt-14 text-[14px] w-[320px] md-[256px] rounded-md">
                     CÓMO USAR MI SEGURO
                 </button>

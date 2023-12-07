@@ -4,9 +4,15 @@ import { roboto } from '@/app/ui/fonts'
 import { lato } from '@/app/ui/fonts'
 import { useAppDispatch, useAppSelector } from "../../../Redux/hooks"
 import { RootState } from "../../../Redux/store";
+import { useRouter } from 'next/navigation'
+
 export default function IWant() {
   const cobertura = useAppSelector((state: RootState) => state.cobertura);
   const dispatch = useAppDispatch();
+  const router = useRouter()
+  const handleClick = () => {
+    router.push('/gracias')
+  }
     return ( 
       <section className={`flex flex-row justify-between items-center lg:flex-col  lg:items-start w-full mt-10 h-[76px] iWant lg:shadow-none lg:w-[33.33%] lg:pl-7 lg:pt-[100px]`}>
             <div className='text-[#494F66] ml-6 lg:border-b-[1px] lg:border-[rgb(215,219,245)] lg:w-[224px]'>
@@ -23,7 +29,7 @@ export default function IWant() {
                 <li className={`text-[14px] text-[#676F8F] ${roboto.className}`}>Aros gratis</li>
               </ul>
             </div>
-            <button className="bg-[#FF1C44] h-[44px] text-white py-2 px-4 text-[14px] mr-6 lg:ml-6 w-[168px] lg:w-[192px] font-bold rounded-md lg:mt-8">
+            <button className="bg-[#FF1C44] h-[44px] text-white py-2 px-4 text-[14px] mr-6 lg:ml-6 w-[168px] lg:w-[192px] font-bold rounded-md lg:mt-8" onClick={ handleClick }>
               lo quiero
             </button>
       </section>

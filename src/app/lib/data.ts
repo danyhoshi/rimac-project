@@ -59,3 +59,66 @@ export const planesCobertura = {
     choqueRoja: 20.00,
     atropello: 50.00
 }
+
+export const vehiculos = [
+    {
+        id: 0,
+        marca: 'Wolskwagen',
+        modelo: 'Golf',
+        anio: '2019'
+    },
+    {
+        id: 1,
+        marca: 'Wolskwagen',
+        modelo: 'Crossfox',
+        anio: '2017'
+    },
+    {
+        id: 2,
+        marca: 'Toyota',
+        modelo: 'Corolla',
+        anio: '2020'
+    },
+    {
+        id: 3,
+        marca: 'Toyota',
+        modelo: '4Runner',
+        anio: '2022'
+    },
+    {
+        id: 4,
+        marca: 'Ford',
+        modelo: 'FX4',
+        anio: '2007'
+    },
+    {
+        id: 5,
+        marca: 'Honda',
+        modelo: 'Civic',
+        anio: '2020'
+    },
+    {
+        id: 6,
+        marca: 'Mazda',
+        modelo: 'Mazda3',
+        anio: '2013'
+    },
+    {
+        id: 7,
+        marca: 'Chevrolet',
+        modelo: 'Corsa',
+        anio: '2006'
+    },
+    {
+        id: 8,
+        marca: 'Jeep',
+        modelo: 'Grand Cherokee',
+        anio: '2012'
+    },
+    {
+        id: 9,
+        marca: 'Reanult',
+        modelo: 'Symbol',
+        anio: '2017'
+    }
+]
