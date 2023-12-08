@@ -7,9 +7,8 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { formInfoSchema } from '@/app/validation/login'       
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation'
-import { coberturaSlice, changePlaca, getDataUser } from "../../../Redux/features/coberturaSlice"
-import { useAppDispatch, useAppSelector } from "../../../Redux/hooks"
-import { RootState } from "../../../Redux/store";
+import { changePlaca, getDataUser } from "../../../Redux/features/coberturaSlice"
+import { useAppDispatch } from "../../../Redux/hooks"
                        
  export const metadata: Metadata = {
                      title: 'Login',
@@ -24,7 +23,6 @@ type Inputs = {
 
 export default function Login() {
   const router = useRouter()
-  // const cobertura = useAppSelector((state: RootState) => state.cobertura);
   const dispatch = useAppDispatch();
   const { register, 
     handleSubmit, 

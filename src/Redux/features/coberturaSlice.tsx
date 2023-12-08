@@ -121,7 +121,6 @@ export const coberturaSlice = createSlice({
           // Add reducers for additional action types here, and handle loading state as needed
           builder.addCase(getDataUser.fulfilled, (state, action) => {
             const { id, name, email }  = action.payload[0];
-           // console.log(name)
             state.loading = false;
             state.nameUser = name;
             state.idUser = id;
