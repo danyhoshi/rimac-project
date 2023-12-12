@@ -42,6 +42,8 @@ const onSubmit: SubmitHandler<Inputs> = (data) => {
   dispatch(changePlaca(data.placa))
   const id = Math.floor(Math.random() * 9) + 0
   dispatch(getDataUser(id))
+ // localStorage.setItem('state', JSON.stringify(state))
+
   router.push('/arma-tu-plan')
 
 }//place where we send data to db}
@@ -57,7 +59,7 @@ const onSubmit: SubmitHandler<Inputs> = (data) => {
           <div className={`flex lg:hidden justify-center flex-col w-full mt-10 ${lato.className} font-normal h-[270px] bg-[#fafbff]`}>
             <div className='w-4/6 ml-7 max-w-[210px]'>
               <p className='text-[#494F66] text-[10px]'><span className={`${lato.className} font-bold`}>¡NUEVO!</span></p>
-              <h1 className={`text-[#494F66] text-[28px] leading-9 mt-2`}>Seguro Vehicular <span className='text-[#ff1c44]'>Tracking</span></h1>
+              <h1 className={`text-[#494F66] text-[28px] leading-9 mt-2`}>Seguro Vehicular <span className='text-[#2196F3]'>Tracking</span></h1>
               <p className={`${roboto.className} text-[#676F8F] text-[14px] mt-4`}>Cuéntanos dónde le harás seguimiento a tu seguro</p>
             </div>
            
@@ -65,10 +67,10 @@ const onSubmit: SubmitHandler<Inputs> = (data) => {
         <div className='hidden relative lg:block desktop w-[45%] h-full w-max-[816px]'>
             <div className='w-[430px] absolute lg:bottom-[20%]  pl-[140px]'> {/*mt-[21rem]*/}
               <p className='text-[#494F66] text-[12px]'><span className={`${lato.className} font-bold`}>¡NUEVO!</span></p>
-              <h1 className={`text-[#494F66] text-[34px] leading-11 mt-2`}>Seguro <span className='text-[#ff1c44]'>Vehicular Tracking</span></h1>
+              <h1 className={`text-[#494F66] text-[34px] leading-11 mt-2`}>Seguro <span className='text-[#2196F3]'>Vehicular Tracking</span></h1>
               <p className={`${roboto.className} text-[#676F8F] text-[14px] mt-4`}>Cuéntanos dónde le harás seguimiento a tu seguro</p>
             </div>
-            <p className='absolute text-[12px] text-[#A9AFD9] inset-x-0 pl-[120px] bottom-[50px]'>© 2021 RIMAC Seguros y Reaseguros.</p>
+            <p className='absolute text-[12px] text-[#A9AFD9] inset-x-0 pl-[120px] bottom-[50px]'>© 2023 MobileSecure Seguros y Reaseguros.</p>
         </div>
        <div className={`${lato.className} font-normal flex justify-center text-[#494F66] text-[24px] mt-9 lg:w-[60%] pb-6`}>
             
@@ -91,7 +93,7 @@ const onSubmit: SubmitHandler<Inputs> = (data) => {
                         { ...register('dni') }
                       />
                     </div>
-                      { errors.dni?.message && <div className={`text-[#FF1C44] text-[12px] ${lato.className}`}>{ errors.dni?.message }</div> }
+                      { errors.dni?.message && <div className={`text-[#2196F3] text-[12px] ${lato.className}`}>{ errors.dni?.message }</div> }
                   </div>
                     <div className="relative mt-4">
                       <input
@@ -103,7 +105,7 @@ const onSubmit: SubmitHandler<Inputs> = (data) => {
                         minLength={6}
                         { ...register('celular') }
                       />
-                       { errors.celular?.message && <div className={`text-[#FF1C44] text-[12px] ${lato.className}`}>{ errors.celular?.message }</div> }
+                       { errors.celular?.message && <div className={`text-[#2196F3] text-[12px] ${lato.className}`}>{ errors.celular?.message }</div> }
                   </div>
               
                   <div className="relative mt-4">
@@ -117,7 +119,7 @@ const onSubmit: SubmitHandler<Inputs> = (data) => {
                         { ...register('placa') } 
                       /> 
                       {/* Registramos todos los inputs, se pasa el nombre que se le dio en el type Inputs */}
-                      { errors.placa?.message && <div className={`text-[#FF1C44] text-[12px] ${lato.className}`}>{ errors.placa?.message }</div> }
+                      { errors.placa?.message && <div className={`text-[#2196F3] text-[12px] ${lato.className}`}>{ errors.placa?.message }</div> }
                     </div>
                 
                 <div className="flex mt-4">
@@ -128,8 +130,8 @@ const onSubmit: SubmitHandler<Inputs> = (data) => {
                       { ...register('acepto') }/>
                     <label className="ms-2 text-[12px] text-[#676F8F]">Acepto la Política de <span className='font-bold text-[#676F8F] underline'>Protección de Datos Personales</span> y los <span className='font-bold text-[#676F8F] underline'>Términos y Condiciones</span>.</label>
                 </div>
-                    { errors.acepto?.message && <div className={`text-[#FF1C44] text-[12px] ${lato.className}`}>{ errors.acepto?.message }</div> }
-            <button className="bg-[#FF1C44] h-[56px] text-white py-2 px-4 text-[14px] w-full lg:w-[192px] mt-8 font-bold rounded-md">
+                    { errors.acepto?.message && <div className={`text-[#2196F3] text-[12px] ${lato.className}`}>{ errors.acepto?.message }</div> }
+            <button className="bg-[#2196F3] h-[56px] text-white py-2 px-4 text-[14px] w-full lg:w-[192px] mt-8 font-bold rounded-md">
               COTÍZALO
             </button>
              

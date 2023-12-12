@@ -25,13 +25,8 @@ export default function Header() {
           'lg:bg-white': pathname==='/arma-tu-plan' || pathname==='/arma-tu-plan/proteje-a-los-que-te-rodean' || pathname==='/arma-tu-plan/mejora-tu-plan' || pathname==='/gracias',
         }
         )}>
-          <Image  
-            src="/LogoRIMAC.svg"
-            width={92}
-            height={16}
-            className="block"
-            alt="logo-Rimac"
-          />
+          <h1 className={`${roboto.className} text-[#2196F3] text-[24px] font-bold`}>MobileSecure</h1>
+         
           <div className='flex flex-row items-center'>
             <p className={`pr-4 ${roboto.className} text-xs hidden md:block text-[#676f8f]`}>¿Tienes alguna duda?</p>
               <Image src="/ic_phone.svg"
@@ -40,7 +35,7 @@ export default function Header() {
               className="block"
               alt="phone"/>   
               <p className={`pl-1 ${roboto.className} text-xs block md:hidden call`}>Llámanos</p>
-              <p className={`pl-1 ${roboto.className} text-xs hidden md:block call`}>(01) 411 6001</p>
+              <p className={`pl-1 ${roboto.className} text-xs hidden md:block call`}>(01) 777 8593</p>
             </div>
         </header>
       </div>

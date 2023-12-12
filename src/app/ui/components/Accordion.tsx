@@ -77,7 +77,7 @@ const Accordion: React.FC<Props> = ({title, description, src}) =>
                         <h3 className='text-[#494F66] w-[150px]'>{title}</h3>
                         <Switch 
                             title={title}/>
-                        <Image  src={ show ? '/red_arrow_up.svg' : '/red_arrow_down.svg' }
+                        <Image  src={ show ? '/blue_arrow_up.svg' : '/blue_arrow_down.svg' }
                             width={20}
                             height={20}
                             className="lg:block hidden self-start"

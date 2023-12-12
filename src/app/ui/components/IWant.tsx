@@ -29,7 +29,7 @@ export default function IWant() {
                 <li className={`text-[14px] text-[#676F8F] ${roboto.className}`}>Aros gratis</li>
               </ul>
             </div>
-            <button className="bg-[#FF1C44] h-[44px] text-white py-2 px-4 text-[14px] mr-6 lg:ml-6 w-[168px] lg:w-[192px] font-bold rounded-md lg:mt-8" onClick={ handleClick }>
+            <button className="bg-[#2196F3] h-[44px] text-white py-2 px-4 text-[14px] mr-6 lg:ml-6 w-[168px] lg:w-[192px] font-bold rounded-md lg:mt-8" onClick={ handleClick }>
               lo quiero
             </button>
       </section>
