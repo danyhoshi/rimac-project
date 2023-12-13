@@ -3,14 +3,14 @@ import Image from 'next/image'
 import { lato } from '@/app/ui/fonts';
 import { roboto } from '@/app/ui/fonts'
 import { useAppSelector, useAppDispatch } from '../../Redux/hooks'
-import React from 'react'
+import { useEffect } from 'react'
 import { RootState } from "../../Redux/store";
 import { setState, cobertura } from '@/Redux/features/coberturaSlice';
 
 
-export default function pageGracias() {
+export default function PageGracias() {
     const dispatch = useAppDispatch();
-    React.useEffect(() => {
+    useEffect(() => {
         if(localStorage?.getItem('state')){
            const data : cobertura = JSON.parse(localStorage?.getItem('state') || '');
            dispatch(setState(data))
