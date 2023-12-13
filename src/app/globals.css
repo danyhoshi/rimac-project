@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -17,12 +17,77 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background-color: #fafbff;
-  /* background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb)); */
+  background-color: #fff;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;       /* Remove default arrow */
+  background: white url(../../public/arrow.svg) no-repeat; 
+  background-position: right 15px top 50%;  
+  color: #ffffff;
+}
+
+.call {
+  color: #6464fa;
+}
+
+.plan {
+  /* box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.15); */
+  /* Shadow 3 */
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(163, 171, 204, 0.12);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(163, 171, 204, 0.12);
+  box-shadow: 0px 0px 10px 0px rgba(163, 171, 204, 0.12);
+  /* -webkit-box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 10px -3px rgba(0,0,0,0.15); */
+}
+.desktop {
+  background: url(../../public/desktop2.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+
+.flex1 {
+  display: inline-flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.flex3 {
+  display: inline-flex;
+  flex: 3;
+  justify-content: center;
+}
+
+.left {
+  margin-right: auto;
+}
+.right {
+  margin-left: auto;
+}
+
+.iWant {
+  box-shadow: 0px 6px 32px 0px rgba(174, 172, 243, 0.45);
+
+}
+
+.precio {
+  list-style-image: url(../../public/gl_check.svg);
+  padding-top: 0.5rem;
+}
+
+.precio > li {
+  line-height: 1.8rem;
+  margin-left: 1rem;
+  padding-left: 0.8rem;
+}
+
+@media screen and (max-height: 724px) {
+  .hidden-footer {
+    display: none;
+  }
 }
