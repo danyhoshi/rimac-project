@@ -1,7 +1,8 @@
+import { vehiculo } from "./types"
 export const dataProtejeTuAuto = [
     {
         title: 'Llanta robada',
-        description: 'He salido de casa a las cuatro menos cinco para ir a la academia de ingles de mi pueblo (Sant Cugat, al lado de Barcelona) con mi bici, na llego a la academia que está en el centro del pueblo en una plaza medio-grande y dejo donde siempre la bici atada con una pitón a un sitio de esos de poner las bicis y mucho más',
+        description: 'He salido de casa a las siete de la mañana para ir a la universidad (UC, en Puente Bárbula) con mi carro, llego a la universidad que está en Naguanagua y lo dejo donde siempre en el estacionamiento de la facultad...',
         src: '/llantaRobada.svg'
     },
     {
@@ -59,3 +60,66 @@ export const planesCobertura = {
     choqueRoja: 20.00,
     atropello: 50.00
 }
+
+export const vehiculos: vehiculo[] = [
+    {
+        id: 0,
+        marca: 'Wolskwagen',
+        modelo: 'Golf',
+        anio: '2019'
+    },
+    {
+        id: 1,
+        marca: 'Wolskwagen',
+        modelo: 'Crossfox',
+        anio: '2017'
+    },
+    {
+        id: 2,
+        marca: 'Toyota',
+        modelo: 'Corolla',
+        anio: '2020'
+    },
+    {
+        id: 3,
+        marca: 'Toyota',
+        modelo: '4Runner',
+        anio: '2022'
+    },
+    {
+        id: 4,
+        marca: 'Ford',
+        modelo: 'FX4',
+        anio: '2007'
+    },
+    {
+        id: 5,
+        marca: 'Honda',
+        modelo: 'Civic',
+        anio: '2020'
+    },
+    {
+        id: 6,
+        marca: 'Mazda',
+        modelo: 'Mazda3',
+        anio: '2013'
+    },
+    {
+        id: 7,
+        marca: 'Chevrolet',
+        modelo: 'Corsa',
+        anio: '2006'
+    },
+    {
+        id: 8,
+        marca: 'Jeep',
+        modelo: 'Grand Cherokee',
+        anio: '2012'
+    },
+    {
+        id: 9,
+        marca: 'Reanult',
+        modelo: 'Symbol',
+        anio: '2017'
+    }
+]

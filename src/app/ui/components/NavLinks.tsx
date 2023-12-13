@@ -42,12 +42,12 @@ export default function NavLink() {
                 {links.map((pag, index) => {
                     return (
                         <Link key={ pag.href } href={pag.href} onClick= {() => handleClick(index) } 
-                        className={clsx('text-[#494F66] w-[33.33%] text-center leading-5 tracking-[0.8px] h-[63px]',
+                        className={clsx('w-[33.33%] text-center leading-5 tracking-[0.8px] h-[63px]',
                         {
                             'px-8': index===0,
                             'px-4': index===1,
                             'px-9': index===2,
-                            'border-[#FF1C44] border-b-[2px] text-[#FF1C44]': select[index],
+                            'border-[#2196F3] border-b-[2px] text-[#2196F3]': select[index],
                             'border-[#D7DBF5] border-b-[1px] text-[#494F66]': !select[index]
 
                         }

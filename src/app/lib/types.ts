@@ -3,3 +3,10 @@ export interface option {
     description: string,
     src: string
 }
+
+export interface vehiculo {
+    id: number,
+    marca: string,
+    modelo: string,
+    anio: string
+}

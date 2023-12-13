@@ -1,12 +1,10 @@
-import type { Metadata } from 'next'
 'use client';
-import { Inter } from 'next/font/google'
+import type { Metadata } from 'next'
 import './globals.css'
-import Image from 'next/image'
-import { roboto } from '@/app/ui/fonts';
 import Header from '@/app/ui/components/Header'
 import StoreProvider from './StoreProvider';
-const inter = Inter({ subsets: ['latin'] })
+import React from 'react'
+
 
 // export const metadata: Metadata = {
 //   title: {
@@ -15,16 +13,13 @@ const inter = Inter({ subsets: ['latin'] })
 //   },
 //   description: 'Seguro Vehicular Tracking.',
 // };
-// export const metadata: Metadata = {
-//   title: 'Rimac',
-//   description: 'Seguro Vehicular Tracking',
-// }
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  
   return (
     <html lang="en" className='relative'>  
     <StoreProvider>
