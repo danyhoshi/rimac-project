@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from "../../../Redux/hooks"
 import { RootState } from "../../../Redux/store";
 import { cobertura, setState } from '@/Redux/features/coberturaSlice';
 
-export default function Step() {
+export default function Coverage() {
     const dispatch = useAppDispatch();
     React.useEffect(() => {
         if(localStorage?.getItem('state')){

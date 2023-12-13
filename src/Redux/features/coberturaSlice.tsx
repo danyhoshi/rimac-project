@@ -38,30 +38,6 @@ export const getDataUser = createAsyncThunk(
    
     }
   )
-//   let data
-//   if (typeof window !== 'undefined' && window.localStorage){
-//      data = window?.localStorage?.getItem('state') ? JSON.parse(window?.localStorage?.getItem('state') || '') : {}; 
-//   }
-//   const initialState: cobertura = {
-//     loading: false,
-//     idUser: data?.idUser || '',
-//     nameUser: data?.nameUser || '',
-//     email: data?.email || '',
-//     placa: data?.placa || '',
-//     marcaAuto: data?.marcaAuto ||'',
-//     modeloAuto: data?.modeloAuto || '',
-//     anioAuto: data?.anioAuto || '',
-//     montoBase: planesCobertura.montoBase,
-//     montoLlantaRobada: planesCobertura.llantaRobada,
-//     montoChoqueRoja: planesCobertura.choqueRoja,
-//     montoAtropello: planesCobertura.atropello,
-//     montoCobertura: data?.montoCobertura || 14300.00,
-//     montoMensual: data?.montoMensual || planesCobertura.montoBase,
-//     llantaRobada: data?.llantaRobada || false,
-//     choqueRoja: data?.choqueRoja || false,
-//     atropello: data?.atropello || false,
-//     error: null
-// }
 
 const initialState: cobertura = {
     loading: false,
@@ -150,7 +126,7 @@ export const coberturaSlice = createSlice({
            state.choqueRoja = action.payload.choqueRoja
            state.atropello = action.payload.atropello
            state.llantaRobada = action.payload.llantaRobada
-           const choque = state.choqueRoja ? state.montoChoqueRoja : 0.00
+           const choque = (state.choqueRoja && state.montoCobertura <= 16000) ? state.montoChoqueRoja : 0.00
            const atropello = state.atropello ? state.montoAtropello : 0.00
            const llantaRobo = state.llantaRobada ? state.montoLlantaRobada : 0.00
            state.montoMensual =  choque + atropello + llantaRobo + state.montoBase
